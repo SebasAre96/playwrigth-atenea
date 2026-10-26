@@ -18,7 +18,7 @@ export class LoginPage{
         await this.page.waitForLoadState('networkidle');
     }
 
-    async completarFormularioLogin(usuario: {nombre: string, apellido: string, email: string, contraseña: string}){
+    async completarFormularioLogin(usuario: {email: string, contraseña: string}){
             await this.emailInput.fill(usuario.email);
             await this.passwordInput.fill(usuario.contraseña);
         }
@@ -27,7 +27,7 @@ export class LoginPage{
         await this.loginButton.click();
     }
 
-    async completarYHacerClickBotonLogin(usuario: {nombre: string, apellido: string, email: string, contraseña: string}){
+    async completarYHacerClickBotonLogin(usuario: {email: string, contraseña: string}){
         await this.completarFormularioLogin(usuario);
         await this.hacerClickBotonLogin();
     }
